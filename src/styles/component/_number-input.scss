@@ -1,0 +1,18 @@
+.u-number-input {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+
+  &-input {
+    width:px(50);
+    text-align:center;
+    font-size:px(20);
+  }
+
+  &-btn {
+    width:px(30);
+    height:px(30);
+    padding:px(5);
+    border:2rpx solid $color-border-gray;
+  }
+}

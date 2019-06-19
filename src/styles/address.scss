@@ -1,0 +1,143 @@
+@import "../global";
+
+.address {
+
+  &-list {
+    overflow:hidden;
+    display:flex;
+    flex-direction:column; 
+  }
+
+  &-item {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    padding:px(10) 0;
+    margin-bottom:px(10);
+    border-top:1px solid $color-border-gray;
+    border-bottom:1px solid $color-border-gray;
+    background:$color-white;
+    font-size:px(16);
+
+    .a-default {
+      flex:1;
+      text-align:center;
+      padding:px(20) 0;
+
+      text {
+        padding:px(5) px(8);
+        border-radius:px(3);
+        background:#dadada;
+      }
+
+      &.on {
+        text {
+          background:#ffb1ae;
+          color:#cc1717;
+        }
+      }
+      
+    }
+
+    .a-info {
+      flex:4;
+      display:flex;
+      flex-direction:column;
+      padding:px(5) px(8);
+      border-left:1px solid $color-border-gray;
+      border-right:1px solid $color-border-gray;
+
+      &-user {
+        .name {
+          margin-right:px(10);
+        }
+      }
+
+      .address {
+        margin-top:px(5);
+      }
+    }
+
+    .a-edit {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+
+      text {
+        padding:px(5) 0;
+        color:$color-primary;
+
+        &:last-child {
+          color:$color-666;
+        }
+      }
+    }
+  }
+
+  &-form {
+    display:flex;
+    flex-direction:column;
+
+    &-item {
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      padding:0 px(10);
+      height:px(50);
+      border-bottom:1px solid $color-border-gray;
+      font-size:px(16);
+
+      .title {
+        min-width:px(100);
+        color:#343434;
+      }
+
+      input {
+        flex:4;
+        border:0;
+        padding:px(10) px(5);
+        color:#666;
+      }
+
+      &.area {
+        position:relative;
+
+        input {
+          padding-right:px(45);
+        }
+      }
+
+    }
+
+    &-area {
+      position:absolute;
+      right:0;
+      top:0;
+      width:px(40);
+      height:px(40);
+      text-align:center;
+      line-height:px(40);
+
+      &:after {
+        @include arrow(right,1.2em,2px);
+        color:$color-666;
+      }
+    }
+
+    &-btn {
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      text-align:center;
+      margin-top:30rpx;
+
+      button {
+        flex:1;
+        margin:0 px(10);
+        font-size:px(18);
+      }
+    }
+  }
+
+}

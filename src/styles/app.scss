@@ -1,0 +1,55 @@
+@import "./global";
+
+page,
+navigator,
+view,
+text,
+image,
+form,
+input,
+button {
+	box-sizing:border-box;
+}
+
+page {
+	display:flex;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+  background-color:$color-bg-primary;
+  font-family:-apple-system-font,Helvetica Neue,Helvetica,Microsoft YaHei,sans-serif;
+}
+
+navigator {
+	-webkit-tap-highlight-color:transparent;
+}
+
+image {
+	width:100%;
+}
+
+// define
+.fl {
+	float:left;
+}
+
+.fr {
+	float:right;
+}
+
+.hide {
+	display:none;
+}
+
+@import "./component/page";
+@import "./component/header";
+@import "./component/tab";
+@import "./component/number-input";
+
+@import "./common/card";
+@import "./common/dialog";
+@import "./common/check";
+@import "./common/bar";
+@import "./common/btn";
+@import "./common/avatar";
+@import "./common/uploader";

@@ -1,0 +1,31 @@
+.tab {
+  display: flex;
+  margin-bottom: 0;
+  background: #fff;
+  line-height: ($tab-size - px(5) * 2);
+  text-align: center;
+
+  &-item {
+    flex: 1;
+    padding-top: px(5);
+
+    &-active {
+      &,
+      &:focus,
+      &:hover,
+      &:active{
+        color: $color-primary;
+      }
+    }
+  }
+
+  &-inner {
+    display: inline-block;
+    border-bottom: px(5) solid;
+    padding: 0 px(4);
+  }
+
+  &-item:not(&-item-active) &-inner {
+    border-color: transparent;
+  }
+}

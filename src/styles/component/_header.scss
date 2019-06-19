@@ -1,0 +1,70 @@
+
+.header {
+  height:$header-size;
+  position:relative;
+  line-height:$header-size;
+  text-align:center;
+  background:$color-white;
+  // @include hairline-bottom();
+
+  &-inverse {
+    color:$color-white;
+    background:#000;
+  }
+
+  &-inverse &-btn-back::before {
+    border-color:$color-white;
+  }
+
+  &-left,
+  &-right {
+    position:absolute;
+    top:0;
+    bottom:0;
+  }
+
+  &-left {
+    left:0;
+  }
+
+  &-right {
+    right:0;
+  }
+
+  &-title {
+    font-size:px(20);
+    font-weight:normal;
+    padding:0 $header-size;
+    @include ellipsis();
+  }
+
+  &-btn {
+    @include size($header-size);
+    display:inline-block;
+    vertical-align:top;
+    background-size:auto 100%;
+    background-position:center;
+
+    &:not(&-text) {
+      @include hide-text();
+    }
+
+    &-back {
+      $back-btn-size:px(20);
+      
+      padding:(($header-size - $back-btn-size) / 2);
+
+      &::before {
+        content:"";
+        width:$back-btn-size;
+        height:$back-btn-size;
+        border:2px solid #676767;
+        border-right-width: 0;
+        border-bottom-width: 0;
+        display:block;
+        margin:auto;
+        transform:translateX(25%) rotate(-45deg);
+      }
+    }
+  }
+}

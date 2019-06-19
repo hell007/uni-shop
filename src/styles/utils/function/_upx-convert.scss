@@ -1,0 +1,35 @@
+@function px-upx($values...) {
+  @return upx-convert(1, "px", $values...);
+}
+
+@function design-upx($values...) {
+  $scale: 750 / $design-width; //2upx=1px 设计稿750px
+  @return upx-convert($scale, "px", $values...);
+}
+
+@function upx-convert($scale:1, $defaut-unit: "px", $values...) {
+  $result: ();
+  $separator: list-separator($values);
+
+  @each $value in $values {
+    $item: $value;
+    @if type-of($value) == "number" {
+      @if unitless($value) {
+        $value: add-unit($value, $defaut-unit);
+      }
+      @if unit($value) == "px" {
+        $value: $value / 1px * 2upx;
+      }
+      $item: $value * $scale;
+    } @else if type-of($value) == "list" {
+      $item: rem-convert($scale, $value...);
+    }
+    $result: append($result, $item, $separator);
+  }
+
+  @if length($result) == 1 {
+    $result: nth($result, 1);
+  }
+
+  @return $result;
+}

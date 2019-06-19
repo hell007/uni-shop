@@ -1,0 +1,17 @@
+.bar {
+  overflow:hidden;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  height:$bar-size;
+  background:$color-white;
+  
+  &-left {
+    flex:2;
+  }
+
+  &-right {
+    flex:4;
+    text-align:right;
+  }
+}

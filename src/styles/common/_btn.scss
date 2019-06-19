@@ -1,0 +1,107 @@
+.btn {
+  display:inline-block;
+  height:$btn-size;
+  line-height:$btn-size;
+  padding:0 ($btn-size / 2);
+  text-align:center;
+  border:0;
+  border-radius:0;
+  white-space:nowrap;
+
+  &-rounded {
+    border-radius:px(2);
+  }
+
+  &:disabled {
+    color:$color-white;
+    background:#bbb;
+  }
+
+  &-block {
+    display:block;
+    width:100%;
+
+    & + & {
+      margin-top:px(10);
+    }
+  }
+
+  &-ghost {
+    border:1px solid $color-primary;
+
+    &,
+    &:focus,
+    &:hover,
+    &:active {
+      color:$color-primary;
+    }
+  }
+
+  &-pill {
+    border-radius:999px;
+  }
+
+  $colors: (
+    primary:$color-primary,
+    orange:$color-orange,
+    secondary:$color-secondary,
+    link:#009bfa,
+    gray:$color-999,
+  );
+
+  @each $type, $color in $colors {
+    &-#{$type} {
+      &,
+      &:hover,
+      &:active,
+      &:focus,
+      &:disabled {
+        background:$color;
+        border-color:$color;
+        color:$color-white;
+      }
+
+      &.btn-ghost {
+        &,
+        &:hover,
+        &:active,
+        &:focus,
+        &:disabled {
+          color:$color;
+        }
+      }
+    }
+  }
+}
+
+.btn-group {
+  display: inline-flex;
+  background-color: $color-primary;
+  //background-image: linear-gradient(to right, $color-primary, #fe7985);
+  border-radius: 99px;
+  color:$color-white;
+  white-space: nowrap;
+
+  &-block {
+    display:flex;
+  }
+
+  .btn {
+    flex:1;
+  }
+
+  :first-child {
+    border-top-left-radius:999px;
+    border-bottom-left-radius:999px;
+  }
+
+  :last-child {
+    border-top-right-radius:999px;
+    border-bottom-right-radius:999px;
+  }
+
+  .btn + .btn {
+    @include hairline-left(#fff);
+  }
+}
+

@@ -1,0 +1,236 @@
+.dialog {
+  $selector: &;
+  $selector-main: #{$selector}-main;
+  $dialog-header-size: $header-size !default;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(#000, .5);
+  z-index: 999;/*index($z-index, dialog)*/
+  display: none;
+  opacity: 0;
+  transition: opacity .1s;
+
+  &-main {
+    background: #fff;
+    position: absolute;
+    animation-duration: .2s;
+    animation-delay: .1s;
+    animation-fill-mode: both;
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+    will-change: transform;
+  }
+
+  @at-root {
+    .dialog-effect {
+      .page {
+        transition: transform .2s .1s;
+      }
+
+      &-open {
+        // position: fixed;
+        // left: 0;
+        // right: 0;
+        // top: 0;
+        // bottom: 0;
+        // max-width: 720px;
+        // min-width: 320px;
+        // margin: 0 auto;
+
+        .page-scroller {
+        }
+      }
+    }
+  }
+
+  &-header,
+  &-footer {
+    height: $dialog-header-size; // empty header
+    line-height: $dialog-header-size;
+    flex: none;
+    text-align: center;
+    position: relative;
+  }
+
+  &-header {
+    @include hairline-bottom();
+  }
+
+  &-footer {
+    @include hairline-top();
+    display: flex;
+  }
+
+  &-close {
+    @include hide-text();
+    @include size($dialog-header-size);
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: px(8);
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      //background: url(../images/dialog/dialog-close.png?__inline) center center no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  &-body {
+    @include scrollable();
+    flex-grow: 1; // on ios 10, `flex: 1` will shrink
+  }
+
+  &-bottom {
+    #{$selector-main} {
+      // min-height: 200px;
+      min-height: 112px;
+      max-height: 90%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      animation-name: slide-up;
+      border-radius:px(8) px(8) 0 0;
+
+      @keyframes slide-up {
+        0% {
+          transform: translateY(100%);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  &-top {
+    #{$selector-main} {
+      min-height: px(150);
+      max-height: 80%;
+      @include scrollable();
+      top: 0;
+      left: 0;
+      right: 0;
+      animation-name: slide-down;
+
+      @keyframes slide-down {
+        0% {
+          transform: translateY(-100%);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  &-right,
+  &-left {
+    #{$selector}-close {
+      @include size($header-size);
+      padding: px(10);
+    }
+
+    #{$selector}-header {
+      line-height: $header-size;
+      height: $header-size;
+    }
+
+    #{$selector-main} {
+      width: 80%;
+      bottom: 0;
+      top: 0;
+      height: 100%;
+    }
+  }
+
+  &-right {
+    #{$selector-main} {
+      right: 0;
+      animation-name: slide-left;
+
+      @keyframes slide-left {
+        0% {
+          transform: translateX(100%);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  &-left {
+    #{$selector-main} {
+      left: 0;
+      animation-name: slide-right;
+
+      @keyframes slide-right {
+        0% {
+          transform: translateX(-100%);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  &-center {
+    transition-duration: .3s;
+
+    #{$selector-main} {
+      position: relative;
+      width: 90%;
+      max-height: 90%;
+      border-radius: px(10);
+    }
+  }
+
+  &-show {
+    display: block;
+    opacity: 1;
+  }
+
+  @at-root {
+    #{&}-show#{&}-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &-closable {
+    cursor: pointer;
+  }
+
+  &-action {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border: 0;
+    padding: 0 15px;
+
+    &-cancel {
+      left: 0;
+    }
+
+    &-confirm {
+      right: 0;
+      color: $color-primary;
+    }
+  }
+}

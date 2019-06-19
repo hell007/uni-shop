@@ -1,0 +1,110 @@
+{
+  "pages": [ //pages数组中第一项表示应用启动页,
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    }, {//去除默认导航，实现自定义
+      "path": "pages/case/case",
+      "style": {
+        "navigationBarBackgroundColor": "#00c170",
+        "navigationBarTitleText": "案列", 
+        "app-plus": {
+          "bounce": "none",
+          "titleNView": {
+            "buttons": [{
+              "text": "\ue612", //\e612 需要加个u \ue612
+              "fontSrc": "static/fonts/uni.ttf",
+              "fontSize": "22",
+              "float": "right",
+              "color": "#fff"
+            }, {
+              "text": "昆明",
+              "fontSize": "14",
+              "float": "left",
+              "color": "#fff"
+            }],
+            "searchInput": {
+              "align": "center",
+              "placeholder": "iphoneX",
+              "borderRadius": "50upx",
+              "backgroundColor": "#fff",
+              "disabled": true
+            }
+          }
+        }
+      }
+    }, {
+      "path": "pages/search/search",
+      "style": {
+        "navigationBarTitleText": "搜索",
+        "enablePullDownRefresh": true,
+        "navigationStyle": "custom", 
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    }, {
+      "path": "pages/form/form",
+      "style": {
+        "navigationBarTitleText": "表单"
+      }
+    }, {
+      "path": "pages/form/form2",
+      "style": {
+        "navigationBarTitleText": "表单"
+      }
+    }, {
+      "path": "pages/product/product",
+      "style": {
+        "navigationBarTitleText": "详情"
+      }
+    }, {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    }, {
+      "path": "pages/reg/reg",
+      "style": {
+        "navigationBarTitleText": "注册"
+      }
+    }, {
+      "path": "pages/my/my",
+      "style": {
+        "navigationBarTitleText": "个人中心"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#7a7e83",
+    "selectedColor": "#11B0FE",
+    "backgroundColor": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "static/images/tabBar/home.png",
+      "selectedIconPath": "static/images/tabBar/home_actived.png"
+    }, {
+      "pagePath": "pages/case/case",
+      "text": "案列",
+      "iconPath": "static/images/tabBar/home.png",
+      "selectedIconPath": "static/images/tabBar/home_actived.png"
+    }, {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "static/images/tabBar/my.png",
+      "selectedIconPath": "static/images/tabBar/my_actived.png"
+    }]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#42b983",
+    "backgroundColor": "#42b983"
+  }
+}

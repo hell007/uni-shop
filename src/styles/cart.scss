@@ -1,0 +1,147 @@
+@import "../global";
+
+.cart {
+
+  &-tips { 
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    flex:1;
+    height:100%;
+    text-align:center;
+
+    &-box {
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:px(150);
+      margin:px(-100) 0 0 px(-70);
+
+      image {
+        width:px(60);
+        height:px(60);
+        margin:0 auto;
+      }
+
+      text {
+        display:block;
+        width:px(100);
+        height:px(30);
+        margin:px(10) auto 0;
+        line-height:px(30);
+        border-radius:px(4);
+        font-size:px(16);
+        color:$color-white;
+        background:#eb4f38;
+      }
+    }
+  }
+
+  &-list {
+    display:flex;
+    flex-direction:column;
+    margin-bottom:px(10);
+  }
+
+  &-item {
+    overflow:hidden;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    padding:px(10);
+    margin-bottom:px(10);
+    border-top:1px solid $color-border-gray;
+    border-bottom:1px solid $color-border-gray;
+    background:$color-white;
+
+    .i-checkbox {
+      margin-right:px(15);
+    }
+
+    .i-picture image {
+      width:px(100);
+      height:px(100);
+    }
+
+    .i-info {
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      flex:3;
+      margin-left:px(10);
+      font-size:px(14);
+    }
+
+    .i-params {
+      margin:px(5) 0;
+      color:#646464;
+    }
+
+    .i-price {
+      margin:0 0 px(5);
+      font-size:px(16);
+      color:#eb4f38;
+    }
+
+    .i-operate {
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+    }
+
+    .i-operate image {
+      width:px(30px);
+      height:px(30);
+      margin:0;
+      padding:px(5);
+      border:1px solid $color-border-gray;
+    }
+
+    .i-operate input {
+      width:px(50);
+      margin-top:px(3);
+      text-align:center;
+      font-size:px(16);
+    }
+
+    .i-delete image {
+      width:px(32);
+      height:px(32);
+    }
+  }
+}
+
+.bar {
+
+  &-right,
+  &-left {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+  }
+
+  &-left {
+    flex:5;
+  }
+
+  &-right {
+    flex:2;
+  }
+
+  .o-checkbox {
+    margin:0 px(20) 0 px(10);
+  }
+
+  .o-price {
+    font-size:px(16);
+    color:$color-333;
+
+    text {
+      color:$color-primary;
+    }
+  }
+
+  .btn {
+    border-radius:0;
+  }
+}

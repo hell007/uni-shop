@@ -1,0 +1,44 @@
+@import "../global";
+
+.pay {
+  text-align:center;
+
+  &-type {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    width:px(150);
+    padding:px(25) 0;
+    margin:0 auto;
+    text-align:center;
+
+    image {
+      width:px(32);
+      height:px(32);
+      margin-right:px(20);
+    }
+  }
+
+  &-price {
+    font-size:px(50);
+    color:#eb4f38;
+  }
+
+  &-btn {
+    
+    button {
+      width:px(300);
+      border:1px solid $color-border-gray;
+      background:#eb4f38;
+      color:$color-white;
+    }
+  }
+
+  &-shoper {
+    padding:px(15) 0;
+    margin-bottom:px(10);
+    font-size:px(14);
+  }
+}
+
+

@@ -1,0 +1,27 @@
+.avatar {
+  @include size($avatar-size);
+
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #d6d7db;
+  font-size: 0;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+  }
+
+  &-img {
+    max-height: 100%;
+  }
+
+  &-text {
+    vertical-align: middle;
+    font-size: px(50);
+  }
+}

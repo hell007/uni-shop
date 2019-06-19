@@ -1,0 +1,48 @@
+.uploader {
+  width: px(120);
+  height: px(120);
+  border: 2rpx solid $color-border-gray;
+  border-radius: px(10);
+  position: relative;
+  overflow: hidden;
+  vertical-align: top;
+  display: inline-block;
+  margin:px(8);
+
+  &-pic,
+  &-icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &-icon {
+    //background-image: url(../images/uploader/plus.png?__inline);
+    background-size: 100%;
+  }
+
+  &-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-del {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include hide-text();
+    padding: 3px;
+    background: rgba(#fff, .2);
+
+    &::before {
+      content: "";
+      display: block;
+      @include size(16);
+      //background-image: url(../images/uploader/delete.png?__inline);
+      background-size: 100%;
+    }
+  }
+}
